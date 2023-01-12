@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>ECharts</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+</head>
+<body>
+<!-- Prepare a DOM with a defined width and height for ECharts -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script th:inline="javascript">
+      var myChart = echarts.init(document.getElementById('main'));
+
+      var option = [(${options})];
+
+      myChart.setOption(option);
+
+</script>
+</body>
+</html>
